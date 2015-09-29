@@ -25,7 +25,7 @@ var dubnium = {
         _message = (!_username) ? "Message" : _username;
 
         var _c = $(".chat-messages")[0];
-        var _shouldScroll = _c.scrollTop > _c.scrollHeight - _c.height() - 50;
+        var _shouldScroll = _c.scrollTop > _c.scrollHeight - $(".chat-messages").height() - 50;
 
         $(dubnium.chat).append(
             "<li class='user-dubniumscript'>"
@@ -47,7 +47,8 @@ var dubnium = {
             +"</li>");
 
         if (_shouldScroll)  _c.scrollTop = _c.scrollHeight;
-        if (_c.children().length > 512) _c.children().first().remove();
+        if ($(".chat-messages").children().length > 512) $(".chat-messages").children().first().remove();
     }
+}
 
 dubnium.addchat("Dubnium v" + dubnium.version + "", "has started successfully!");
