@@ -11,7 +11,7 @@
  *
  */
 
-const DBVERSION = "A1.0.21B";
+const DBVERSION = "A1.0.2.2B";
 const PATH = "https://rawgit.com/dcvslab/projects/master/dubnium/";
 
 var _head = document.getElementsByTagName("head")[0];
@@ -49,5 +49,5 @@ var dubnium = {
         if (_shouldScroll)  _c.scrollTop = _c.scrollHeight;
         if (_c.children().length > 512) _c.children().first().remove();
     }
-
+}
 dubnium.addchat("Dubnium v" + dubnium.version + "", "has started successfully!");
