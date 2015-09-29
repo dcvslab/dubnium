@@ -22,7 +22,7 @@ var dubnium = {
     chat: document.getElementsByClassName("chat-main")[0],
     addchat: function addChat(_username, _message) {
         _username = (!_username) ? "Dubnium" : _username;
-        _message = (!_username) ? "Message" : _username;
+        _message = (!_message) ? "Message" : _message;
 
         var _c = $(".chat-messages")[0];
         var _shouldScroll = _c.scrollTop > _c.scrollHeight - $(".chat-messages").height() - 50;
