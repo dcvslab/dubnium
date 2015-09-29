@@ -12,7 +12,7 @@
  */
 
 const DBVERSION = "A1.0.2.2B";
-const PATH = "https://rawgit.com/dcvslab/projects/master/dubnium/";
+const PATH = "https://rawgit.com/dcvslab/projects/dubnium/master/";
 
 var _head = document.getElementsByTagName("head")[0];
 $(_head).append("<link rel='stylesheet' type='text/css' href='" + PATH + "dubnium.css'>");
