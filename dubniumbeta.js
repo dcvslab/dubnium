@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  *           Dubnium Script
  *
@@ -12,7 +11,7 @@
  *
  */
 
-const DBVERSION = "A1.0.2B";
+const DBVERSION = "A1.0.21B";
 const PATH = "https://rawgit.com/dcvslab/projects/master/dubnium/";
 
 var _head = document.getElementsByTagName("head")[0];
