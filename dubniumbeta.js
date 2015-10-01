@@ -18,7 +18,10 @@ $(_head).append("<link rel='stylesheet' type='text/css' href='https://rawgit.com
 
 var dubnium = {
     version: DBVERSION,
-    chat: document.getElementsByClassName("chat-main")[0],
+    site:{ 
+        chat: document.getElementsByClassName("chat-main")[0],
+        dubup: document.getElementsByClassName("dubup")[0]
+    }
     addchat: function addChat(_username, _message) {
         _username = (!_username) ? "Dubnium" : _username;
         _message = (!_message) ? "Message" : _message;
@@ -26,7 +29,7 @@ var dubnium = {
         var _c = $(".chat-messages")[0];
         var _shouldScroll = _c.scrollTop > _c.scrollHeight - $(".chat-messages").height() - 50;
 
-        $(dubnium.chat).append(
+        $(dubnium.site.chat).append(
             "<li class='user-dubniumscript'>"
             +   "<div class='stream-item-content'>"
             +       "<div class='image_row'></div>"
@@ -49,5 +52,6 @@ var dubnium = {
         if ($(".chat-messages").children().length > 512) $(".chat-messages").children().first().remove();
     }
 }
-
+//TEMP AUTO DUBUP 
+Dubtrack.Events.bind('realtime:room_playlist-update', function(){ dubnium.site.dubup.click() });
 dubnium.addchat("Dubnium v" + dubnium.version + "", "has started successfully!");
