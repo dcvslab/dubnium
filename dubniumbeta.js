@@ -23,6 +23,11 @@ var dubnium = {
         navbar: document.getElementsByClassName("user-header-menu")[0],
         pmbutton: document.getElementsByClassName("user-messages-button")[0],
         chat: document.getElementsByClassName("chat-main")[0],
+        loading:{
+            loading: document.getElementById("main-loading"),
+            text: document.getElementsByClassName("loading-text"),
+            spinner: document.getElementsByClassName("spinner")[0],
+        },
         dubup: document.getElementsByClassName("dubup")[0],
     },
     menu:{
@@ -64,5 +69,5 @@ var dubnium = {
 //TEMP AUTO DUBUP 
 Dubtrack.Events.bind('realtime:room_playlist-update', function(){ dubnium.site.dubup.click() });
 
-dubnium.menu.createbutton()
+dubnium.menu.button.createbutton()
 dubnium.addchat("<span style='color:#f0f'>Dubnium v" + dubnium.version + " has started successfully!</span>");
