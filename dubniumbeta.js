@@ -11,7 +11,7 @@
  *
  */
 
-const DBVERSION = "A1.0.2.2B";
+const DBVERSION = "A1.0.3B";
 
 var _head = document.getElementsByTagName("head")[0];
 $(_head).append("<link rel='stylesheet' type='text/css' href='https://rawgit.com/dcvslab/dubnium/master/dubnium.css'>");
@@ -21,7 +21,7 @@ var dubnium = {
     site:{ 
         chat: document.getElementsByClassName("chat-main")[0],
         dubup: document.getElementsByClassName("dubup")[0]
-    }
+    },
     addchat: function addChat(_username, _message) {
         _username = (!_username) ? "Dubnium" : _username;
         _message = (!_message) ? "Message" : _message;
