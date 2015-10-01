@@ -33,7 +33,8 @@ var dubnium = {
             createbutton: function createButton() {
                 dubnium.menu.button.button.id = "dbbtn";
                 dubnium.menu.button.buttontext.innerHTML = "dubnium";
-                dubnium.menu.button.buttonbtn.appendChild(dubnium.menu.button.buttontext); dubnium.menu.button.button.appendChild(dubnium.menu.button.buttonbtn);
+                dubnium.menu.button.buttonbtn.appendChild(dubnium.menu.button.buttontext); 
+                dubnium.menu.button.button.appendChild(dubnium.menu.button.buttonbtn);
                 dubnium.site.navbar.insertBefore(dubnium.menu.button.button, dubnium.site.navbar.childNodes[0]);
             },
         },
