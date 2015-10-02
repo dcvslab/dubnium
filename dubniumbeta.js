@@ -11,14 +11,12 @@
  *
  */
 
-if (!dubnium) {
-
 var _head = document.getElementsByTagName("head")[0];
 $(_head).append("<link rel='stylesheet' type='text/css' href='https://rawgit.com/dcvslab/dubnium/master/dubnium.css'>");
 
 var dubnium = {
     version: "A1.1.3B",
-    site: { 
+    site:{ 
         menuright: document.getElementById("main-menu-right"),
         navbar: document.getElementsByClassName("user-header-menu")[0],
         pmbutton: document.getElementsByClassName("user-messages")[0],
@@ -32,7 +30,7 @@ var dubnium = {
         dubup: document.getElementsByClassName("dubup")[0],
     },
     settings:{
-        autoupdub: "true"  
+      autoupdub: "true"  
     },
     functions:{
         addchat: function addChat(_class, _message) {
@@ -43,7 +41,7 @@ var dubnium = {
         var _shouldScroll = _c.scrollTop > _c.scrollHeight - $(".chat-messages").height() - 50;
         
         $(dubnium.site.chat).append(
-            "<li class='" + _class + "'>"  // "chat-system-loading" or "system"
+            "<li class='" + _class + "'>" //chat-system-loading or system
                 +"" + _message
             +"</li>");
 
@@ -51,9 +49,8 @@ var dubnium = {
         if ($(".chat-messages").children().length > 512) $(".chat-messages").children().first().remove();
         },
         aud: function aUd() {
-            if (dubnium.settings.autoupdub == "true") {
-                dubnium.site.dubup.click();
-            }
+            if (dubnium.settings.autoupdub == "true") 
+                { dubnium.site.dubup.click() }
         },
     },
     menu:{
@@ -72,51 +69,29 @@ var dubnium = {
                 dubnium.site.pmbutton.addEventListener("click", function(){ dubnium.site.pm.style.display = "block"; })
             },
         },
-        content:{
-            element: document.createElement("section"),
-            menuc: {
-                 cont: document.createElement("div"),
-                 audm: document.createElement("li"),
+        menu:{
+            menu: document.createElement("section"),
+            menuc:{ //menu content
+                 cont: document.createElement("div"), //container
             },
             createmenu: function createMenu() {
-                dubnium.menu.content.element.id = "dbmenu";
-                dubnium.menu.content.menuc.className = "main-message-list";
-                dubnium.menu.content.menuc.audm.className = "message-item display-0-users dbms";
-
-                $(dubnium.menu.content.menuc.audm).append(
-                    "<div class='message-content'>"
-                    +    "<h3 class='dbmsh'>Auto Updub</h3>"
-                    +    "<p class='dbmsb' id='audoo'>ON</p>"
-                    +"</div>");
-                $(dubnium.menu.content.menuc.cont).append(dubnium.menu.content.menuc.audm);
-                dubnium.menu.content.menuc.audm.addEventListener("click", function () {
-                    if (dubnium.settings.autoupdub == "true") {
-                        dubnium.settings.autoupdub = "false";
-                        dubnium.menu.content.menuc.audm.children[0].children[0].className = "dbmsh dtpurple";
-                    } else {
-                        dubnium.settings.autoupdub = "true";
-                        dubnium.menu.content.menuc.audm.children[0].children[0].className = "dbmsh dtblue";
-                    }
-                });
-                dubnium.menu.content.element.appendChild(dubnium.menu.content.menuc.cont);
-                dubnium.site.menuright.appendChild(dubnium.menu.content.element);
+                dubnium.menu.menu.menu.id = "dbmenu";
+                dubnium.menu.menu.menuc.className = "main-message-list";
+                
+                
+                dubnium.menu.menu.menu.appendChild(dubnium.menu.menu.menuc.cont);
+                dubnium.site.menuright.appendChild(dubnium.menu.menu.menu);
                 
             },
             
         },
     },
 }
+//API CALL SETUPS
+Dubtrack.Events.bind('realtime:room_playlist-update', function() {dubnium.functions.aud()});
 
-// API call setups
-Dubtrack.Events.bind("realtime:room_playlist-update", function() {
-    dubnium.functions.aud()
-});
-
-// Menu setups
+//MENU SETUPS
 dubnium.menu.button.createbutton()
-dubnium.menu.content.createmenu()
+dubnium.menu.menu.createmenu()
 dubnium.functions.addchat("chat-system-loading", "<span style='color:#f0f'>Dubnium v " + dubnium.version + " has started successfully!</span>");
 
-} else {
-    dubnium.functions.addchat("chat-system-loading", "<span style='color:#f0f'>Dubnium was already loaded!</span>");
-}
