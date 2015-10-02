@@ -12,8 +12,13 @@
     padding: 0px 0px 0px 15px;
     font-size: 0.95em;
     font-weight: bold;
-    color: #F0F;
     overflow: hidden;
+}
+.dbfalse {
+    color: #F0F;
+}
+.dbtrue {
+    color: #0FF;
 }
 .dbms { /*db menu settings container */
     border-bottom: 1px solid #202020;
