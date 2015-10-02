@@ -16,6 +16,9 @@
     overflow: hidden;
     padding-left: 15px;
 }
+.dbms { /*db menu settings container */
+    border-bottom: 1px solid #202020;
+}
 .dbmsb { /*db menu settings body */
     font-size: 0.85em;
     text-align: left !important;
