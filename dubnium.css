@@ -14,13 +14,15 @@
     font-weight: bold;
     color: #F0F;
     overflow: hidden;
+    padding-left: 15px;
 }
 .dbmsb { /*db menu settings body */
     font-size: 0.85em;
-    text-align: left;
+    text-align: left !important;
     margin: 0px;
-    padding: 0px;
-    color: #999;
+    padding: 0px !important;
+    color: #999 !important;
+    padding-left: 15px;
 }
 .dtblue {
     color: #0ff;
