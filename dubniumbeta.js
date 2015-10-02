@@ -43,8 +43,8 @@ var dubnium = {
                 dubnium.menu.button.buttonbtn.appendChild(dubnium.menu.button.buttontext); 
                 dubnium.menu.button.button.appendChild(dubnium.menu.button.buttonbtn);
                 dubnium.site.navbar.insertBefore(dubnium.menu.button.button, dubnium.site.navbar.childNodes[0]);
-                dubnium.menu.button.button.addEventListener("click", function(){ dubnium.menu.menu.menu.style.display = "block"; dubnium.site.pm.style.display = "none"; }
-                dubnium.site.pmbutton.addEventListener("click", function(){ dubnium.menu.menu.menu.style.display = "none"; dubnium.site.pm.style.display = "block"; }
+                dubnium.menu.button.button.addEventListener("click", function(){ dubnium.menu.menu.menu.style.display = "block"; dubnium.site.pm.style.display = "none"; })
+                dubnium.site.pmbutton.addEventListener("click", function(){ dubnium.menu.menu.menu.style.display = "none"; dubnium.site.pm.style.display = "block"; })
             },
         },
         menu:{
