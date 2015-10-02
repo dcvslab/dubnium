@@ -9,12 +9,11 @@
 }
 .dbmsh { /*db menu settings head */
     margin: 0.25em 0px;
-    padding: 0px;
+    padding: 0px 0px 0px 15px;
     font-size: 0.95em;
     font-weight: bold;
     color: #F0F;
     overflow: hidden;
-    padding-left: 15px;
 }
 .dbms { /*db menu settings container */
     border-bottom: 1px solid #202020;
@@ -23,9 +22,8 @@
     font-size: 0.85em;
     text-align: left !important;
     margin: 0px;
-    padding: 0px !important;
+    padding: 0px 0px 0px 15px !important;
     color: #999 !important;
-    padding-left: 15px;
 }
 .dtblue {
     color: #0ff;
