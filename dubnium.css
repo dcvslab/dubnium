@@ -7,6 +7,21 @@
     overflow: hidden;
     position: relative;
 }
+.dbmsh { /*db menu settings head */
+    margin: 0.25em 0px;
+    padding: 0px;
+    font-size: 0.95em;
+    font-weight: bold;
+    color: #F0F;
+    overflow: hidden;
+}
+.dbmsb { /*db menu settings body */
+    font-size: 0.85em;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    color: #999;
+}
 .dtblue {
     color: #0ff;
 }
