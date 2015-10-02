@@ -15,7 +15,7 @@ var _head = document.getElementsByTagName("head")[0];
 $(_head).append("<link rel='stylesheet' type='text/css' href='https://rawgit.com/dcvslab/dubnium/master/dubnium.css'>");
 
 var dubnium = {
-    version: "A1.1.1B",
+    version: "A1.1.2B",
     site:{ 
         menuright: document.getElementById("main-menu-right"),
         navbar: document.getElementsByClassName("user-header-menu")[0],
@@ -48,10 +48,9 @@ var dubnium = {
         if (_shouldScroll)  _c.scrollTop = _c.scrollHeight;
         if ($(".chat-messages").children().length > 512) $(".chat-messages").children().first().remove();
         },
-        autoupdub: function autoUpdub() {
-            if (dubnium.settings.autoupdub == "true") {
-                dubnium.site.dubup.click(); 
-            };
+        aud: function aUd() {
+            if (dubnium.settings.autoupdub == "true") 
+                { dubnium.site.dubup.click() }
         },
     },
     menu:{
@@ -80,7 +79,7 @@ var dubnium = {
                 dubnium.menu.menu.menu.id = "dbmenu";
                 dubnium.menu.menu.menuc.className = "main-message-list";
                 dubnium.menu.menu.menuc.audm.className = "message-item display-0-users dbms";
-                $(dubnium.menu.menu.menuc.audm).append("<div class='message-content'><h3 class='dbmsh'>Auto Updub</h3><p class='dbmsb'>ON</p></div>")
+                $(dubnium.menu.menu.menuc.audm).append("<div class='message-content'><h3 class='dbmsh'>Auto Updub</h3><p class='dbmsb' id='audoo'>ON</p></div>")
                 $(dubnium.menu.menu.menuc.cont).append(dubnium.menu.menu.menuc.audm);
                 dubnium.menu.menu.menuc.audm.addEventListener("click", function (){if (dubnium.settings.autoupdub == "true") {dubnium.settings.autoupdub = "false"; dubnium.menu.menu.menuc.audm.children[0].children[0].className = "dbmsh dtpurple"} else {dubnium.settings.autoupdub = "true"; dubnium.menu.menu.menuc.audm.children[0].children[0].className = "dbmsh dtblue" }})
                 dubnium.menu.menu.menu.appendChild(dubnium.menu.menu.menuc.cont);
@@ -91,7 +90,7 @@ var dubnium = {
         },
     },
 }
-Dubtrack.Events.bind('realtime:room_playlist-update', dubnium.functions.autoupdub());
+Dubtrack.Events.bind('realtime:room_playlist-update', dubnium.functions.aud());
 
 dubnium.menu.button.createbutton()
 dubnium.menu.menu.createmenu()
