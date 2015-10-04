@@ -129,10 +129,6 @@ ul.avatar-list li.updub,
     color: #000;
 }
 
-#chat .chat-container ul.chat-main li:nth-child(odd) {
-    background: #0a0a0a;
-}
-
 
 /**
  * Plug.dj stylized delete button
