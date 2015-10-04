@@ -179,6 +179,7 @@ var dubnium = {
             createmenu: function() {
                 dubnium.menu.body.element.id = "dbmenu";
                 dubnium.menu.body.element.className = "main-message-list";
+                dubnium.menu.body.content.firstdiv.innerHTML = "IN PROGRESS"
                 dubnium.site.navright.appendChild(dubnium.menu.body.element);
                 dubnium.menu.body.element.appendChild(dubnium.menu.body.content.firstdiv);
             }
