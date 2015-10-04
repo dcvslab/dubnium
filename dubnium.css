@@ -15,10 +15,10 @@
     overflow: hidden;
 }
 .dbfalse {
-    color: #F0F;
+    color: #f0f;
 }
 .dbtrue {
-    color: #0FF;
+    color: #0ff;
 }
 .dbms { /* db menu settings container */
     border-bottom: 1px solid #202020;
@@ -50,34 +50,50 @@ html {
 #chat .chat-container ul.chat-main li .activity-row .text span.username-handle {
     color: #00bee8;
 }
+
 #chat .chat-container .pusher-chat-widget-input button,
 #player-controller ul li.infoContainer .progressBg,
 #main_player .player_container .videoquality-el,
 #main_player .player_container .hideVideo-el,
 #main_player .player_container .refresh-el,
-#volume-div .ui-slider-handle,
-ul.avatar-list li.currentDJ:after,
 #player-controller ul li a.dubup:hover,
 #player-controller ul li a.dubup.voted,
 #player-controller ul li a:hover,
 #player-controller ul li a.voted,
+ul.avatar-list li.currentDJ:after,
+#volume-div .ui-slider-handle,
+#user_popover .actions a,
 .loading {
     background-color: #00bee8;
 }
 
-
+#chat .chat-container ul.chat-main li:hover>.stream-item-content .chatDelete,
+#chat .chat-container ul.chat-main li .stream-item-content:focus>.chatDelete,
 #chat .chat-container .pusher-chat-widget-input .icon-camera,
+#chat .chat-container .pusher-chat-widget-input button,
 #player-controller .right {
     color: #ccc;
 }
 
-ul.avatar-list li.updub {
+ul.avatar-list li.updub,
+#user_popover .actions,
+#user_popover {
     border: 1px solid #00bee8;
 }
 
 #player-controller ul li.infoContainer .progressBg {
     transition: all 1s ease;
     height: 3px;
+}
+
+#chat .chat-container .pusher-chat-widget-input button {
+    background-color: #111;
+    transition: all .2s ease;
+}
+
+#chat .chat-container .pusher-chat-widget-input button:hover {
+    background-color: #00bee8;
+    color: #000;
 }
 
 
