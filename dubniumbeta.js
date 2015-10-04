@@ -24,18 +24,42 @@ var _head = document.getElementsByTagName("head")[0];
 $(_head).append("<link rel='stylesheet' type='text/css' href='https://rawgit.com/dcvslab/dubnium/master/dubnium.css'>");
 
 var dubnium = {
-    version: "A1.1.10B",
+    version: "A1.1.11B",
     init: function() {
+        var _err = "";
+
         // API calls setup
-        Dubtrack.Events.bind("realtime:room_playlist-update", dubnium.functions.autodub);
+        try {
+            Dubtrack.Events.bind("realtime:room_playlist-update", dubnium.functions.autodub);
+        } catch (e) {
+            console.error("----=[DUBNIUM ERROR]=----\nError binding event: autodub\n@dubnium.init()\n" + e);
+        }
 
         // Menu setup
-        dubnium.menu.button.createbutton()
-        dubnium.menu.body.createmenu()
-        dubnium.functions.addchat(
-            "chat-system-loading",
-            "<span style='color:#f0f'>Dubnium v " + dubnium.version + " has started successfully!</span>"
-        );
+        try {
+            dubnium.menu.button.createbutton();
+            dubnium.menu.body.createmenu();
+        } catch (e) {
+            console.error("----=[DUBNIUM ERROR]=----\nError creating menu\n@dubnium.init()\n" + e);
+        }
+
+        // Functions initializations
+        try {
+            dubnium.functions.VolumeController.init();
+            // ... //
+        } catch (e) {
+            console.error("----=[DUBNIUM ERROR]=----\nError initializing functions\n@dubnium.init()\n" + e);
+        }
+
+        // Start message
+        try {
+            dubnium.functions.addchat(
+                "chat-system-loading",
+                "<span style='color:#f0f'>Dubnium v " + dubnium.version + " has started successfully!</span>"
+            );
+        } catch (e) {
+            console.error("----=[DUBNIUM ERROR]=----\nError appending chat message\n@dubnium.init()\n" + e);
+        }
     },
     site: { 
         navright: document.getElementById("main-menu-right"),
@@ -78,6 +102,29 @@ var dubnium = {
             var _autoDubTimeout =
                 (dubnium.settings.autodub) ? setTimeout(dubnium.site.dubup.click(), (r(500, !0) + 100))
                 : void 0;
+        },
+        VolumeController: {
+            init: function() {
+                var isMouseDownOnDocument = !1;
+
+                // Appens the percentage element to the volume bar
+                $("div.left li.volume").append("<div id=\"db-volumeViewer\">0%</div>");
+
+                // Binds the events
+                document.onmousedown = function(e) {  isMouseDownOnDocument = !0;  }
+                document.onmouseup   = function(e) {  isMouseDownOnDocument = !1;  }
+
+                document.onmousemove = function(e) {
+                    if (isMouseDownOnDocument) {
+                        $("#db-volumeViewer").text(
+                            dubnium.functions.VolumeController.getVolume()
+                        );
+                    }
+                };
+            },
+            getVolume: function() {
+                return $("div.left li.volume a.ui-slider-handle").attr("style").split("left: ")[1].split(";")[0];
+            }
         }
     },
     menu: {

@@ -36,10 +36,19 @@
 .dtpurple {
     color: #f0f;
 }
+#db-volumeViewer {
+    position: absolute;
+    bottom: 20px;
+    left: 94px;
+    font-size: 10px;
+    z-index: -1;
+}
+
 
 /**
  * Experimental recoloring and restyling
  */
+
 html {
     overflow-y: auto;
 }
@@ -94,6 +103,10 @@ ul.avatar-list li.updub,
 #chat .chat-container .pusher-chat-widget-input button:hover {
     background-color: #00bee8;
     color: #000;
+}
+
+#chat .chat-container ul.chat-main li:nth-child(odd) {
+    background: #0a0a0a;
 }
 
 
