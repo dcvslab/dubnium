@@ -1,10 +1,9 @@
 # dubnium
-
 dubnium - a dubtrack.fm script
 
 Currently under development.
 
-# Creators
+## Creators
 [dcv](https://github.com/dcvslab)
 
 [MatheusAvellar](https://github.com/MatheusAvellar/)

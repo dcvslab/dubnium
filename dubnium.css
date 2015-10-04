@@ -7,7 +7,7 @@
     overflow: hidden;
     position: relative;
 }
-.dbmsh { /*db menu settings head */
+.dbmsh { /* db menu settings head */
     margin: 0.25em 0px;
     padding: 0px 0px 0px 15px;
     font-size: 0.95em;
@@ -20,10 +20,10 @@
 .dbtrue {
     color: #0FF;
 }
-.dbms { /*db menu settings container */
+.dbms { /* db menu settings container */
     border-bottom: 1px solid #202020;
 }
-.dbmsb { /*db menu settings body */
+.dbmsb { /* db menu settings body */
     font-size: 0.85em;
     text-align: left !important;
     margin: 0px;
@@ -36,3 +36,58 @@
 .dtpurple {
     color: #f0f;
 }
+
+/**
+ * Experimental recoloring
+ */
+#chat .chat-container ul.chat-main li .activity-row .text p a.username,
+#chat .chat-container ul.chat-main li .activity-row .text p a.username:hover,
+#chat .chat-container ul.chat-main li .activity-row .text p a.username:visited,
+#chat .chat-container ul.chat-main li .activity-row .text span.username-handle {
+    color: #00bee8;
+}
+#chat .chat-container .pusher-chat-widget-input button,
+#player-controller ul li.infoContainer .progressBg,
+#main_player .player_container .videoquality-el,
+#main_player .player_container .hideVideo-el,
+#main_player .player_container .refresh-el,
+#volume-div .ui-slider-handle,
+ul.avatar-list li.currentDJ:after,
+#player-controller ul li a.dubup:hover,
+#player-controller ul li a.dubup.voted,
+#player-controller ul li a:hover,
+#player-controller ul li a.voted,
+.loading {
+    background-color: #00bee8;
+}
+
+
+#chat .chat-container .pusher-chat-widget-input .icon-camera,
+#player-controller .right {
+    color: #ccc;
+}
+
+ul.avatar-list li.updub {
+    border: 1px solid #00bee8;
+}
+
+
+/**
+ * Plug.dj stylized delete button
+ */
+
+/*
+#chat .chat-container ul.chat-main li:hover>.stream-item-content .chatDelete,
+#chat .chat-container ul.chat-main li .stream-item-content:focus>.chatDelete {
+    opacity: 1;
+}
+
+.icon-close:before {
+    content: "DELETE";
+    font-family: "Open Sans", sans-serif;
+    padding: 3px 4px 3px 4px;
+    background: #f46b40;
+    font-size: 9px;
+    color: #ccc;
+}
+*/

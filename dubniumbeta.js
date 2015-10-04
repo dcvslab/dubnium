@@ -24,7 +24,7 @@ var _head = document.getElementsByTagName("head")[0];
 $(_head).append("<link rel='stylesheet' type='text/css' href='https://rawgit.com/dcvslab/dubnium/master/dubnium.css'>");
 
 var dubnium = {
-    version: "A1.1.4B",
+    version: "A1.1.5B",
     init: function() {
         // API calls setup
         Dubtrack.Events.bind("realtime:room_playlist-update", dubnium.functions.autodub);
@@ -76,7 +76,7 @@ var dubnium = {
         },
         autodub: function() {
             var _autoDubTimeout =
-                (dubnium.settings.autodub) ? setTimeout(dubnium.site.dubup.click, (r(500, !0) + 100));
+                (dubnium.settings.autodub) ? setTimeout(dubnium.site.dubup.click, (r(500, !0) + 100))
                 : void 0;
         }
     },
