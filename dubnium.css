@@ -38,8 +38,12 @@
 }
 
 /**
- * Experimental recoloring
+ * Experimental recoloring and restyling
  */
+html {
+    overflow-y: auto;
+}
+
 #chat .chat-container ul.chat-main li .activity-row .text p a.username,
 #chat .chat-container ul.chat-main li .activity-row .text p a.username:hover,
 #chat .chat-container ul.chat-main li .activity-row .text p a.username:visited,
