@@ -24,13 +24,14 @@ var _head = document.getElementsByTagName("head")[0];
 $(_head).append("<link rel='stylesheet' type='text/css' href='https://rawgit.com/dcvslab/dubnium/master/dubnium.css'>");
 
 var dubnium = {
-    version: "A1.1.11B",
+    version: "A1.1.12B",
     init: function() {
         var _err = "";
 
         // API calls setup
         try {
             Dubtrack.Events.bind("realtime:room_playlist-update", dubnium.functions.autodub);
+            Dubtrack.Events.bind("realtime:room_playlist-update", dubnium.functions.DubsController.update);
         } catch (e) {
             console.error("----=[DUBNIUM ERROR]=----\nError binding event: autodub\n@dubnium.init()\n" + e);
         }
@@ -46,6 +47,7 @@ var dubnium = {
         // Functions initializations
         try {
             dubnium.functions.VolumeController.init();
+            dubnium.functions.DubsController.init();
             // ... //
         } catch (e) {
             console.error("----=[DUBNIUM ERROR]=----\nError initializing functions\n@dubnium.init()\n" + e);
@@ -108,7 +110,10 @@ var dubnium = {
                 var isMouseDownOnDocument = !1;
 
                 // Appens the percentage element to the volume bar
-                $("div.left li.volume").append("<div id=\"db-volumeViewer\">0%</div>");
+                $("div.left li.volume").append(
+                    "<div id=\"db-volumeViewer\">"
+                    +    dubnium.functions.VolumeController.getVolume()
+                    +"</div>");
 
                 // Binds the events
                 document.onmousedown = function(e) {  isMouseDownOnDocument = !0;  }
@@ -124,6 +129,27 @@ var dubnium = {
             },
             getVolume: function() {
                 return $("div.left li.volume a.ui-slider-handle").attr("style").split("left: ")[1].split(";")[0];
+            }
+        },
+        DubsController: {
+            init: function() {
+                var _path = "#player-controller > div.right > ul > li.copy";
+                var _dubs = $("#avatar-list li.user-" + Dubtrack.session.attributes.username + " span").text().trim();
+                var _role = (Dubtrack.session.attributes.roleid <= 0) ? "User" : "Mod";
+
+                $(_path + " span").remove();
+                $(_path).append(
+                    "<div id=\"db-dubsController\"><b>" + _dubs + "</b> DUBS</div>"
+                    +"<div id=\"db-roleController\">" + _role + "</div>"
+                );
+            },
+            update: function() {
+                var _t = setTimeout(function() {
+                    var _dubs = $("#avatar-list li.user-" + Dubtrack.session.attributes.username + " span").text().trim();
+                    if ($("#db-dubsController b").text() != _dubs) {
+                        $("#db-dubsController b").text(_dubs);
+                    }
+                }, 5000);
             }
         }
     },

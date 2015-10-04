@@ -44,6 +44,30 @@
     z-index: -1;
 }
 
+#player-controller > div.right > ul > li.copy {
+    padding: 2px 10px;
+}
+
+#volume-div > a {
+    border: 1px solid #111;
+}
+#db-dubsController,
+#db-roleController {
+    color: #999;
+    text-align: center;
+}
+
+#db-dubsController {
+    font-size: 13px;
+}
+#db-dubsController > b {
+    color: #fff;
+}
+
+#db-roleController {
+    font-size: 10px;
+}
+
 
 /**
  * Experimental recoloring and restyling
