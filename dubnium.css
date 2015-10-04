@@ -71,6 +71,11 @@ ul.avatar-list li.updub {
     border: 1px solid #00bee8;
 }
 
+#player-controller ul li.infoContainer .progressBg {
+    transition: all 1s ease;
+    height: 3px;
+}
+
 
 /**
  * Plug.dj stylized delete button

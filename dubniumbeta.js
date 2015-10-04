@@ -17,7 +17,7 @@ function r(_int, _floor) {
  * @param {Number}  _int     Required. Integer range for the random number to be generated within.
  * @param {Boolean} [_floor] Optional. If "true", number will be floored. If "false", decimal spaces will be kept.
  */
-    return (_int && _floor) ? ~~(Math.random() * i) : (_int) ? (Math.random() * i) : 0;
+    return (_int && _floor) ? ~~(Math.random() * _int) : (_int) ? (Math.random() * _int) : 0;
 }
 
 var _head = document.getElementsByTagName("head")[0];
