@@ -24,14 +24,14 @@ var _head = document.getElementsByTagName("head")[0];
 $(_head).append("<link rel='stylesheet' type='text/css' href='https://rawgit.com/dcvslab/dubnium/master/dubnium.css'>");
 
 var dubnium = {
-    version: "A1.1.5B",
+    version: "A1.1.6B",
     init: function() {
         // API calls setup
         Dubtrack.Events.bind("realtime:room_playlist-update", dubnium.functions.autodub);
 
         // Menu setup
         dubnium.menu.button.createbutton()
-        dubnium.menu.menu.createmenu()
+        dubnium.menu.body.createmenu()
         dubnium.functions.addchat(
             "chat-system-loading",
             "<span style='color:#f0f'>Dubnium v " + dubnium.version + " has started successfully!</span>"
