@@ -30,10 +30,10 @@ var dubnium = {
 
         // API calls setup
         try {
-            Dubtrack.Events.bind("realtime:room_playlist-update", dubnium.functions.autodub);
+            Dubtrack.Events.bind("realtime:room_playlist-update", dubnium.functions.aud);
             Dubtrack.Events.bind("realtime:room_playlist-update", dubnium.functions.DubsController.update);
         } catch (e) {
-            console.error("----=[DUBNIUM ERROR]=----\nError binding event: autodub\n@dubnium.init()\n" + e);
+            console.error("----=[DUBNIUM ERROR]=----\nError binding event: aud\n@dubnium.init()\n" + e);
         }
 
         // Menu setup
@@ -77,7 +77,7 @@ var dubnium = {
         dubup: document.getElementsByClassName("dubup")[0]
     },
     settings: {
-        autodub: "true"  
+        aud: "true"  
     },
     functions: {
         addchat: function(_class, _message) {
@@ -100,10 +100,8 @@ var dubnium = {
                 $(".chat-messages").children().first().remove();
             }
         },
-        autodub: function() {
-            var _autoDubTimeout =
-                (dubnium.settings.autodub) ? setTimeout(dubnium.site.dubup.click(), (r(500, !0) + 100))
-                : void 0;
+        aud: function() {
+                if (dubnium.settings.aud == "true") { dubnium.site.dubup.click() }
         },
         VolumeController: {
             init: function() {
